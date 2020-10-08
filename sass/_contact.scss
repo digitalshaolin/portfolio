@@ -1,0 +1,155 @@
+.contact {
+
+    overflow: hidden;
+
+    &__container {
+
+        text-align: center;
+        padding-top: 40px;
+        opacity: 0;  
+        transform: translateY(30px);        
+
+        .p-header {
+            color: $color-green;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        h2 {
+            font-size: 30px;
+            color: $color-primary;
+            margin-bottom: 20px;
+        }
+
+        .p-main {
+            color: $color-secondary;
+            line-height: 26px;
+            width: 380px;
+            margin: 0 auto 40px;            
+        }
+
+    }
+
+    &__icons {
+
+        display: flex;
+        justify-content: space-evenly;
+        width: 500px;
+        margin: 50px auto 0;
+        padding-bottom: 150px;
+
+       .linkedin {
+           height: 25px;
+           width: 25px;
+           fill: $color-secondary;
+           transition: all .3s;
+       }
+
+       .linkedin-link:hover .linkedin {
+           fill: $color-green;
+           transform: translateY(-7px);
+       }
+
+       .email {
+           height: 36px;
+           width: 37px;
+           fill: $color-secondary;
+           transform: translateY(-6px);
+           transition: all .3s;
+       }
+
+       .email-link:hover .email {
+           transform: translateY(-13px);
+           fill: $color-green;
+       }
+
+       .github {
+           height: 27px;
+           width: 27px;
+           transition: all .3s;
+
+
+           path {
+               fill: $color-secondary;
+               transition: all .3s;
+           }
+          
+       }
+
+       .github-link:hover .github path {
+           fill: $color-green;
+       }
+
+       .github-link:hover .github {
+           transform: translateY(-7px);
+       }
+    }
+
+    &__footer {
+        color: $color-secondary;
+        font-size: 14px;
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 550px) {
+    .contact {
+        &__icons {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+
+    .contact__container {
+        .p-header {
+            color: $color-green;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        h2 {
+            font-size: 26px;
+            color: $color-primary;
+            margin-bottom: 20px;
+        }
+
+        .p-main {
+            color: $color-secondary;
+            margin-bottom: 40px;
+            line-height: 26px;
+        }
+        
+    }
+}
+
+@media (max-width: 500px) {
+
+    .contact__container {
+        .p-header {
+            color: $color-green;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        h2 {
+            font-size: 26px;
+            color: $color-primary;
+            margin-bottom: 20px;
+        }
+
+        .p-main {
+            color: $color-secondary;
+            margin-bottom: 40px;
+            line-height: 22px;
+            font-size: 14px;
+            width: 100%;
+        }
+        
+    }
+
+    .contact__footer {
+        font-size: 12px;
+    }
+}

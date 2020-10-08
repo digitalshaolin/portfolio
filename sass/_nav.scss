@@ -1,0 +1,191 @@
+.nav {
+
+    display: flex;
+    justify-content: space-between;
+
+    .link-wrapper {
+        display: block;
+    }
+
+
+    &__logo {
+
+        
+        font-family: "Montserrat Bold";
+        align-self: flex-end;
+        display: flex;
+        align-items: flex-end;
+        margin-left: 60px;
+        opacity: 0;
+        border-radius: 3px;
+        animation: fade-down .5s ease .2s forwards;
+       
+        
+        
+        .logo-shape,
+        .logo-shape2 {
+            font-size: 25px; 
+            position: relative;                    
+        }
+
+        .logo-shape2 {
+            transition: all .4s cubic-bezier(.42,-0.58,.83,.67);
+        }
+
+        .logo-letters {
+            font-size: 22px;
+            z-index: 100;
+            transition: .5s all;
+        }
+
+        .logo-shape:before {
+            content: "";
+            transition: all .3s cubic-bezier(.42,-0.58,.83,.67);
+            position: absolute;
+            top: 3px;
+            height: 24px;
+            width: 3px;
+            background-color: $color-green;
+            left: 3px;
+            -webkit-backface-visibility:hidden;
+            backface-visibility:hidden;
+            transform: skewX(-19deg);             
+        }
+        
+        a {
+            color: $color-green;            
+        }
+
+        &:hover .logo-shape:before{
+           width: 80px;
+        }
+
+        &:hover .logo-shape2 {
+            transform: translateX(65px);
+            
+        }
+
+        &:hover .logo-letters {
+            color: rgb(21, 9, 54);            
+        }
+
+        
+    }
+
+        
+
+    
+
+
+
+    &__links {
+
+
+        ul {
+            display: flex;            
+            list-style-type: none;
+            margin-right: 40px;
+
+
+            li {
+                padding-top: 30px;
+                opacity: 0;
+            }
+
+            .about-link {                
+                animation: fade-down .5s ease .4s forwards;                
+            }
+            .work-link {                
+                animation: fade-down .5s ease .5s forwards;                
+            }
+            .contact-link {                
+                animation: fade-down .5s ease .6s forwards;                
+            }
+
+            a {
+                color: $color-primary;  
+                position: relative;
+                margin-right: 30px;
+                -webkit-backface-visibility:hidden;
+                backface-visibility:hidden;
+                transition: .3s all ease;
+                font-family: "Montserrat Bold";
+                padding: 0 10px;
+                font-size: 14px;
+                
+                
+                
+                &:after {
+                    content: "";
+                    transition: .3s all ease;
+                    position: absolute;
+                    bottom: 0px;
+                    height: 0px;
+                    width: 100%;
+                    background-color: $color-green;
+                    left: 0;
+                    -webkit-backface-visibility:hidden;
+                    backface-visibility:hidden;
+                    z-index: -1;
+
+                }
+
+                &:hover:after {
+                    height: 150%;
+                }
+
+                &:hover {
+                    color: rgb(5, 3, 24);
+                }
+            }
+        }
+
+    }
+
+}
+
+@media (max-width: 500px) {
+    .nav {
+        &__logo {
+            margin-left: 15px;
+            .logo-shape,
+            .logo-shape2 {
+                font-size: 21px;           
+            }
+
+            .logo-letters {
+                font-size: 18px;
+              
+            }
+
+            .logo-shape:before {
+                height: 21px;
+                width: 2px;
+                left: 3px;
+                top: 1px;
+                -webkit-backface-visibility:hidden;
+                backface-visibility:hidden;
+                transform: skewX(-19deg);             
+            }
+
+            &:hover .logo-shape:before{
+                width: 65px;
+            }
+
+            &:hover .logo-shape2 {
+                transform: translateX(50px);
+            }
+        }
+        &__links {
+            width: 70%;
+            ul {
+                margin-right: 0;
+                justify-content: space-around;
+                a {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
